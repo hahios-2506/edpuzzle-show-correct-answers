@@ -4,8 +4,7 @@ if (typeof document.dev_env != "undefined") {
   base_url = document.dev_env;
 }
 else {
-  //get resources off of github to not inflate the jsdelivr stats
-  base_url = "https://raw.githubusercontent.com/hahios-2506/edpuzzle-show-correct-answers/main";
+  base_url = "https://raw.githubusercontent.com/ading2210/edpuzzle-answers/main";
 }
 
 function http_get(url, callback, headers=[], method="GET", content=null) {
@@ -122,82 +121,82 @@ function openPopup(assignment) {
   }
   
   var base_html = `
-<!DOCTYPE html>
-<head>
-  <style>
-    * {font-family: Arial}
-  </style>
-  <script>
-    var base_url = "${base_url}";
-    function http_get(url, callback) {
-      var request = new XMLHttpRequest();
-      request.addEventListener("load", callback);
-      request.open("GET", url, true);
-      request.send();
-    }
-    function get_tag(tag, url) {
-      console.log("Loading "+url);
-      http_get(url, function(){
-        if ((""+this.status)[0] == "2") {
-          var element = document.createElement(tag);
-          element.innerHTML = this.responseText;
-          document.getElementsByTagName("head")[0].appendChild(element);
-        }
-        else {
-          console.error("Could not fetch "+url);
-        }
-      });
-    }
-    get_tag("style", base_url+"/app/popup.css");
-    get_tag("script", base_url+"/app/popup.js");
-    get_tag("script", base_url+"/app/videooptions.js");
-    get_tag("script", base_url+"/app/videospeed.js");
-  </script>
-  <title>Answers for: ${media.title}</title>
-</head>
-<div id="header_div">
-  <div>
-    <img src="${thumbnail}" height="108px">
+  <!DOCTYPE html>
+  <head>
+    <style>
+      * {font-family: Arial}
+    </style>
+    <script>
+      var base_url = "${base_url}";
+      function http_get(url, callback) {
+        var request = new XMLHttpRequest();
+        request.addEventListener("load", callback);
+        request.open("GET", url, true);
+        request.send();
+      }
+      function get_tag(tag, url) {
+        console.log("Loading "+url);
+        http_get(url, function(){
+          if ((""+this.status)[0] == "2") {
+            var element = document.createElement(tag);
+            element.innerHTML = this.responseText;
+            document.getElementsByTagName("head")[0].appendChild(element);
+          }
+          else {
+            console.error("Could not fetch "+url);
+          }
+        });
+      }
+      get_tag("style", base_url+"/app/popup.css");
+      get_tag("script", base_url+"/app/popup.js");
+      get_tag("script", base_url+"/app/videooptions.js");
+      get_tag("script", base_url+"/app/videospeed.js");
+    </script>
+    <title>Answers for: ${media.title}</title>
+  </head>
+  <div id="header_div">
+    <div>
+      <img src="${thumbnail}" height="108px">
+    </div>
+    <div id="title_div">
+      <p style="font-size: 16px"><b>${media.title}</b></h2>
+      <p style="font-size: 12px">Uploaded by ${media.user.name} on ${date.toDateString()}</p>
+      <p style="font-size: 12px">Assigned on ${assigned_date.toDateString()}, ${deadline_text}</p>
+      <p style="font-size: 12px">Correct choices are <u>underlined</u>.</p>
+      <input id="skipper" type="button" value="Skip Video" onclick="skip_video();" disabled/>
+      <input id="answers_button" type="button" value="Answer Questions" onclick="answer_questions();" disabled/>
+      <div id="speed_container" hidden>
+        <label style="font-size: 12px" for="speed_dropdown">Video speed:</label>
+        <select name="speed_dropdown" id="speed_dropdown" onchange="video_speed()">
+          <option value="0.25">0.25</option>
+          <option value="0.5">0.5</option>
+          <option value="0.75">0.75</option>
+          <option value="1" selected>Normal</option>
+          <option value="1.25">1.25</option>
+          <option value="1.5">1.5</option>
+          <option value="1.75">1.75</option>
+          <option value="2">2</option>
+          <option value="-1">Custom</option>
+        </select>
+        <label id="custom_speed_label" style="font-size: 12px" for="custom_speed"></label>
+        <input type="range" id="custom_speed" name="custom_speed" value="1" min="0.1" max="16" step="0.1" oninput="video_speed()" hidden>
+      </div>
+      <div id="options_container">
+        <label for="pause_on_focus" style="font-size: 12px">Don't pause on unfocus: </label>
+        <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();">
+      </div>
+             <div id="correct-answers">
+            <h3>Correct Answers Hacked By HAHiOS</h3>
+        </div>
+    </div>
   </div>
-  <div id="title_div">
-    <p style="font-size: 16px"><b>${media.title}</b></h2>
-    <p style="font-size: 12px">Uploaded by ${media.user.name} on ${date.toDateString()}</p>
-    <p style="font-size: 12px">Assigned on ${assigned_date.toDateString()}, ${deadline_text}</p>
-    <p style="font-size: 12px">Correct choices are <u>underlined</u>.</p>
-    <input id="skipper" type="button" value="Skip Video" onclick="skip_video();" disabled/>
-    <input id="answers_button" type="button" value="Answer Questions" onclick="answer_questions();" disabled/>
-    <div id="speed_container" hidden>
-      <label style="font-size: 12px" for="speed_dropdown">Video speed:</label>
-      <select name="speed_dropdown" id="speed_dropdown" onchange="video_speed()">
-        <option value="0.25">0.25</option>
-        <option value="0.5">0.5</option>
-        <option value="0.75">0.75</option>
-        <option value="1" selected>Normal</option>
-        <option value="1.25">1.25</option>
-        <option value="1.5">1.5</option>
-        <option value="1.75">1.75</option>
-        <option value="2">2</option>
-        <option value="-1">Custom</option>
-      </select>
-      <label id="custom_speed_label" style="font-size: 12px" for="custom_speed"></label>
-      <input type="range" id="custom_speed" name="custom_speed" value="1" min="0.1" max="16" step="0.1" oninput="video_speed()" hidden>
-    </div>
-    <div id="options_container">
-      <label for="pause_on_focus" style="font-size: 12px">Dont pause on unfocus </label>
-      <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();">
-    </div>
-    <div class="correct-answers">
-        <h3>Correct Answers Hacked By HAHiOS:</h3>
-    </div>
+  <hr>
+  <div id="content"> 
+    <p style="font-size: 12px" id="loading_text"></p>
   </div>
-</div>
-<hr>
-<div id="content"> 
-  <p style="font-size: 12px" id="loading_text"></p>
-</div>
-<hr>
-<p style="font-size: 12px">Made by HAHiOS</p>
-<p style="font-size: 12px">I am a student of RHHS. My dream is to be a Hacker, sometime I am a Black Hat Hacker, and sometime I am a White Hat Hacker.</p>`;
+  <hr>
+  <p style="font-size: 12px">Made By HAHiOS</p>
+  <p style="font-size: 12px">I am a student of RHHS. My dream is to be a hacker, sometime I am a Black Hat Hacker, and sometime I am a White Hat Hacker.</p>`;
   popup = window.open("about:blank", "", "width=600, height=400");
   popup.document.write(base_html);
 
