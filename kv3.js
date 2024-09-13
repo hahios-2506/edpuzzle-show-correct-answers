@@ -4,7 +4,7 @@ if (typeof document.dev_env != "undefined") {
   base_url = document.dev_env;
 }
 else {
-  base_url = "https://raw.githubusercontent.com/ading2210/edpuzzle-answers/main";
+  base_url = "https://raw.githubusercontent.com/hahios-2506/edpuzzle-show-correct-answers/main/hahios.js";
 }
 
 function http_get(url, callback, headers=[], method="GET", content=null) {
