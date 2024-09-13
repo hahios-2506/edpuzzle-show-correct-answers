@@ -130,7 +130,28 @@ function openPopup(assignment) {
       * {font-family: Arial}
       h3 {
         display: block;
-      }
+        position: relative;
+        right: 195px;
+    }
+    .choice-correct > * {
+    text-decoration-line: underline;
+    font-weight: bold;
+    background: linear-gradient(80deg, #ff0000, #ff4800, #eeff00, #1cff08, #01ffb3, #0051ff, #a200ff, #e100ff, #ff0080, #ff0055, #ff0022);
+    background-size: 120%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 2s linear infinite;
+}
+
+    @keyframes animate {
+ 0%{
+    background-position: 0%;
+}
+
+ 100%{
+    background-position: 600%;
+}
+}
   </style>
   <script>
     var base_url = "${base_url}";
@@ -168,7 +189,8 @@ function openPopup(assignment) {
       <p style="font-size: 16px"><b>${media.title}</b></h2>
       <p style="font-size: 12px">Uploaded by ${media.user.name} on ${date.toDateString()}</p>
       <p style="font-size: 12px">Assigned on ${assigned_date.toDateString()}, ${deadline_text}</p>
-      <p style="font-size: 12px">Correct choices are <u>underlined</u>.</p>
+      <hr>
+      <p style="font-size: 16px; font-weight: bold;">Correct choices are <u>underlined</u> (Green).</p>
       <input id="skipper" type="button" value="Skip Video" onclick="skip_video();" disabled/>
       <input id="answers_button" type="button" value="Answer Questions" onclick="answer_questions();" disabled/>
       <div id="speed_container" hidden>
