@@ -124,33 +124,17 @@ function openPopup(assignment) {
 <!DOCTYPE html>
 <head>
   <style>
+    * {font-family: Arial}
     body {
         background-color: rgb(180, 179, 179);
     }
-      * {font-family: Arial}
-      h3 {
-        display: block;
-        position: relative;
-        right: 195px;
-    }
     .choice-correct > * {
     text-decoration-line: underline;
-    font-weight: bold;
     background: linear-gradient(80deg, #ff0000, #ff4800, #eeff00, #1cff08, #01ffb3, #0051ff, #a200ff, #e100ff, #ff0080, #ff0055, #ff0022);
     background-size: 120%;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     animation: animate 2s linear infinite;
-}
-
-    @keyframes animate {
- 0%{
-    background-position: 0%;
-}
-
- 100%{
-    background-position: 600%;
-}
 }
   </style>
   <script>
@@ -182,49 +166,49 @@ function openPopup(assignment) {
   <title>Answers for: ${media.title}</title>
 </head>
 <div id="header_div">
-    <div>
-      <img src="${thumbnail}" height="108px">
-    </div>
-    <div id="title_div">
-      <p style="font-size: 16px"><b>${media.title}</b></h2>
-      <p style="font-size: 12px">Uploaded by ${media.user.name} on ${date.toDateString()}</p>
-      <p style="font-size: 12px">Assigned on ${assigned_date.toDateString()}, ${deadline_text}</p>
-      <hr>
-      <p style="font-size: 16px; font-weight: bold;">Correct choices are <u>underlined</u> (Green).</p>
-      <input id="skipper" type="button" value="Skip Video" onclick="skip_video();" disabled/>
-      <input id="answers_button" type="button" value="Answer Questions" onclick="answer_questions();" disabled/>
-      <div id="speed_container" hidden>
-        <label style="font-size: 12px" for="speed_dropdown">Video speed:</label>
-        <select name="speed_dropdown" id="speed_dropdown" onchange="video_speed()">
-          <option value="0.25">0.25</option>
-          <option value="0.5">0.5</option>
-          <option value="0.75">0.75</option>
-          <option value="1" selected>Normal</option>
-          <option value="1.25">1.25</option>
-          <option value="1.5">1.5</option>
-          <option value="1.75">1.75</option>
-          <option value="2">2</option>
-          <option value="-1">Custom</option>
-        </select>
-        <label id="custom_speed_label" style="font-size: 12px" for="custom_speed"></label>
-        <input type="range" id="custom_speed" name="custom_speed" value="1" min="0.1" max="16" step="0.1" oninput="video_speed()" hidden>
-      </div>
-      <div id="options_container">
-        <label for="pause_on_focus" style="font-size: 12px">Don't pause on unfocus: </label>
-        <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();">
-      </div>
-             <div id="correct-answers">
-            <h3>Correct Answers Hacked By HAHiOS:</h3>
-        </div>
-    </div>
+  <div>
+    <img src="${thumbnail}" height="108px">
   </div>
-  <hr>
-  <div id="content"> 
-    <p style="font-size: 12px" id="loading_text"></p>
+  <div id="title_div">
+    <p style="font-size: 16px"><b>${media.title}</b></h2>
+    <p style="font-size: 12px">Uploaded by ${media.user.name} on ${date.toDateString()}</p>
+    <p style="font-size: 12px">Assigned on ${assigned_date.toDateString()}, ${deadline_text}</p>
+    <hr>
+    <p style="font-size: 16px; font-weight: bolder;">Correct choices are <u>underlined</u>.</p>
+    <input id="skipper" type="button" value="Skip Video" onclick="skip_video();" disabled/>
+    <input id="answers_button" type="button" value="Answer Questions" onclick="answer_questions();" disabled/>
+    <div id="speed_container" hidden>
+      <label style="font-size: 12px" for="speed_dropdown">Video speed:</label>
+      <select name="speed_dropdown" id="speed_dropdown" onchange="video_speed()">
+        <option value="0.25">0.25</option>
+        <option value="0.5">0.5</option>
+        <option value="0.75">0.75</option>
+        <option value="1" selected>Normal</option>
+        <option value="1.25">1.25</option>
+        <option value="1.5">1.5</option>
+        <option value="1.75">1.75</option>
+        <option value="2">2</option>
+        <option value="-1">Custom</option>
+      </select>
+      <label id="custom_speed_label" style="font-size: 12px" for="custom_speed"></label>
+      <input type="range" id="custom_speed" name="custom_speed" value="1" min="0.1" max="16" step="0.1" oninput="video_speed()" hidden>
+    </div>
+    <div id="options_container">
+      <label for="pause_on_focus" style="font-size: 12px">Don't pause on unfocus: </label>
+      <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();">
+    </div>
+           <div id="correct-answers">
+          <h3>Correct Answers Hacked By HAHiOS</h3>
+      </div>
   </div>
-  <hr>
-  <p style="font-size: 12px">Made By HAHiOS</p>
-  <p style="font-size: 12px">I am a student of RHHS. My dream is to be a hacker, sometime I am a Black Hat Hacker, and sometime I am a White Hat Hacker.</p>`;
+</div>
+<hr>
+<div id="content"> 
+  <p style="font-size: 12px" id="loading_text"></p>
+</div>
+<hr>
+<p style="font-size: 12px">Made By HAHiOS</p>
+<p style="font-size: 12px">I am a student of RHHS. My dream is to be a hacker, sometime I am a Black Hat Hacker, and sometime I am a White Hat Hacker.</p>`;
   popup = window.open("about:blank", "", "width=600, height=400");
   popup.document.write(base_html);
 
