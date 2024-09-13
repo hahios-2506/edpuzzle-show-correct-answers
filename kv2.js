@@ -121,40 +121,46 @@ function openPopup(assignment) {
   }
   
   var base_html = `
-  <!DOCTYPE html>
-  <head>
-    <style>
+<!DOCTYPE html>
+<head>
+  <style>
+    body {
+        background-color: rgb(180, 179, 179);
+    }
       * {font-family: Arial}
-    </style>
-    <script>
-      var base_url = "${base_url}";
-      function http_get(url, callback) {
-        var request = new XMLHttpRequest();
-        request.addEventListener("load", callback);
-        request.open("GET", url, true);
-        request.send();
+      h3 {
+        display: block;
       }
-      function get_tag(tag, url) {
-        console.log("Loading "+url);
-        http_get(url, function(){
-          if ((""+this.status)[0] == "2") {
-            var element = document.createElement(tag);
-            element.innerHTML = this.responseText;
-            document.getElementsByTagName("head")[0].appendChild(element);
-          }
-          else {
-            console.error("Could not fetch "+url);
-          }
-        });
-      }
-      get_tag("style", base_url+"/app/popup.css");
-      get_tag("script", base_url+"/app/popup.js");
-      get_tag("script", base_url+"/app/videooptions.js");
-      get_tag("script", base_url+"/app/videospeed.js");
-    </script>
-    <title>Answers for: ${media.title}</title>
-  </head>
-  <div id="header_div">
+  </style>
+  <script>
+    var base_url = "${base_url}";
+    function http_get(url, callback) {
+      var request = new XMLHttpRequest();
+      request.addEventListener("load", callback);
+      request.open("GET", url, true);
+      request.send();
+    }
+    function get_tag(tag, url) {
+      console.log("Loading "+url);
+      http_get(url, function(){
+        if ((""+this.status)[0] == "2") {
+          var element = document.createElement(tag);
+          element.innerHTML = this.responseText;
+          document.getElementsByTagName("head")[0].appendChild(element);
+        }
+        else {
+          console.error("Could not fetch "+url);
+        }
+      });
+    }
+    get_tag("style", base_url+"/app/popup.css");
+    get_tag("script", base_url+"/app/popup.js");
+    get_tag("script", base_url+"/app/videooptions.js");
+    get_tag("script", base_url+"/app/videospeed.js");
+  </script>
+  <title>Answers for: ${media.title}</title>
+</head>
+<div id="header_div">
     <div>
       <img src="${thumbnail}" height="108px">
     </div>
@@ -186,7 +192,7 @@ function openPopup(assignment) {
         <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();">
       </div>
              <div id="correct-answers">
-            <h3>Correct Answers Hacked By HAHiOS</h3>
+            <h3>Correct Answers Hacked By HAHiOS:</h3>
         </div>
     </div>
   </div>
