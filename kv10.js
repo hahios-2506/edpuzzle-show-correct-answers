@@ -226,7 +226,7 @@ function openPopup(assignment) {
       </div>
       <div id="options_container">
         <label for="pause_on_focus" style="font-size: 14px;position: relative;left: 355px; top: -20px;">Don't pause on unfocus: </label>
-        <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();" style="position: relative;left: 200px;top: 2px;">
+        <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();" style="position: relative;left: 356px;top: -17px;">
       </div>
         </div>
              <div id="correct-answers">
