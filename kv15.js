@@ -264,7 +264,7 @@ h4 {
         <input type="range" id="custom_speed" name="custom_speed" value="1" min="0.1" max="16" step="0.1" oninput="video_speed()" hidden>
       </div>
       <div id="options_container">
-        <label for="pause_on_focus" style="font-size: 14px;position: relative;left: 374px; top: -20px;">Don't pause on unfocus: </label>
+        <label for="pause_on_focus" style="font-size: 14px;position: relative; color: white; left: 374px; top: -20px;">Don't pause on unfocus: </label>
         <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();" style="position: relative;left: 374px;top: -17px;">
       </div>
         </div>
