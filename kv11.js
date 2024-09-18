@@ -352,14 +352,14 @@ function parseQuestions(questions) {
           <td class="timestamp_div no_vertical_margin">
             <p>[${timestamp}]</p>
           </td>
-          <td class="question">
+          <td class="question" style="font-size: 14px;">
             ${question_content}
           </td>
         </tr>
         <tr>
           <td></td>
           <td>
-            <ul style="margin-top: 6px; margin-bottom: 0px; padding-left: 18px;">
+            <ul style="margin-top: 6px; margin-bottom: 0px; padding-left: 18px; font-size: 14px;">
               ${choices_html}
             </ul>
           </td>
