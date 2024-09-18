@@ -359,7 +359,7 @@ function parseQuestions(questions) {
         <tr>
           <td></td>
           <td>
-            <ul style="margin-top: 6px; margin-bottom: 0px; padding-left: 18px; font-size: 14px;">
+            <ul style="color: white; margin-top: 6px; margin-bottom: 0px; padding-left: 18px; font-size: 15px;">
               ${choices_html}
             </ul>
           </td>
