@@ -125,13 +125,52 @@ function openPopup(assignment) {
 <head>
   <style>
     body {
-        background-color: rgb(180, 179, 179);
+        background-color: black;
     }
       * {font-family: Arial}
       h3 {
         display: block;
         position: relative;
     }
+
+    p {
+    color: white;
+}
+
+    h3 {
+    text-decoration-line: underline;
+    font-weight: bold;
+    background: linear-gradient(80deg, #ff0000, #ff4800, #eeff00, #1cff08, #01ffb3, #0051ff, #a200ff, #e100ff, #ff0080, #ff0055, #ff0022);
+    background-size: 120%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 2s linear infinite;
+    color: transparent;
+}
+
+h4 {
+    text-decoration-line: underline;
+    font-weight: bold;
+    background: linear-gradient(80deg, #ff0000, #ff4800, #eeff00, #1cff08, #01ffb3, #0051ff, #a200ff, #e100ff, #ff0080, #ff0055, #ff0022);
+    background-size: 120%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 2s linear infinite;
+    color: transparent;
+}
+
+    b {
+    text-decoration-line: underline;
+    font-weight: bold;
+    background: linear-gradient(80deg, #ff0000, #ff4800, #eeff00, #1cff08, #01ffb3, #0051ff, #a200ff, #e100ff, #ff0080, #ff0055, #ff0022);
+    background-size: 120%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 2s linear infinite;
+    color: transparent;
+}
+
+
     .choice-correct > * {
     text-decoration-line: underline;
     font-weight: bold;
@@ -200,14 +239,14 @@ function openPopup(assignment) {
       <p style="font-size: 12px">Uploaded by ${media.user.name} on ${date.toDateString()}</p>
       <p style="font-size: 12px">Assigned on ${assigned_date.toDateString()}, ${deadline_text}</p>
       </div>
-      <div id="hr-tools" style="position: relative; top: -14px;">
+      <div id="hr-tools" style="position: relative; top: -21.6px;">
         <hr>
-        <h3 style="position: relative; text-align: center; top: -5px;">Tools</h3>
+        <h3 style="position: relative; margin-left: 258px; top: -5px;">Tools</h3>
     </div>
       <div class="tools">
-        <div class="tools-control" style="position: absolute; top: -36px;">
+        <div class="tools-control" style="position: absolute; top: -40px;">
       <input id="skipper" type="button" value="Skip Video" onclick="skip_video();" disabled/>
-      <input id="answers_button" style="position: relative; left: 65px;" type="button" value="Auto Answer Questions" onclick="answer_questions();" disabled/>
+      <input id="answers_button" style="position: relative; left: 75px;" type="button" value="Auto Answer Questions" onclick="answer_questions();" disabled/>
       <div id="speed_container" hidden>
         <label style="font-size: 12px" for="speed_dropdown">Video speed:</label>
         <select name="speed_dropdown" id="speed_dropdown" onchange="video_speed()">
@@ -225,12 +264,12 @@ function openPopup(assignment) {
         <input type="range" id="custom_speed" name="custom_speed" value="1" min="0.1" max="16" step="0.1" oninput="video_speed()" hidden>
       </div>
       <div id="options_container">
-        <label for="pause_on_focus" style="font-size: 14px;position: relative;left: 355px; top: -20px;">Don't pause on unfocus: </label>
-        <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();" style="position: relative;left: 356px;top: -17px;">
+        <label for="pause_on_focus" style="font-size: 14px;position: relative;left: 374px; top: -20px;">Don't pause on unfocus: </label>
+        <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();" style="position: relative;left: 374px;top: -17px;">
       </div>
         </div>
              <div id="correct-answers">
-            <h3>Correct Answers Hacked By HAHiOS:</h3>
+            <h4>Correct Answers Hacked By HAHiOS:</h4>
         </div>
     </div>
     </div>
@@ -240,8 +279,8 @@ function openPopup(assignment) {
     <p style="font-size: 12px" id="loading_text"></p>
   </div>
   <hr>
-  <p style="font-size: 12px">Made By HAHiOS</p>
-  <p style="font-size: 12px">I am a student of RHHS. My dream is to be a hacker, sometime I am a Black Hat Hacker, and sometime I am a White Hat Hacker.</p>`;
+  <p style="font-size: 14px">Made By HAHiOS</p>
+  <p style="font-size: 14px">I am a student of RHHS. My dream is to be a Hacker, sometime I am a Black Hat Hacker, and sometime I am a White Hat Hacker.</p>`;
   popup = window.open("about:blank", "", "width=600, height=400");
   popup.document.write(base_html);
 
