@@ -239,7 +239,7 @@ h4 {
       <p style="font-size: 12px">Uploaded by ${media.user.name} on ${date.toDateString()}</p>
       <p style="font-size: 12px">Assigned on ${assigned_date.toDateString()}, ${deadline_text}</p>
       </div>
-      <div id="hr-tools" style="position: relative; top: -21.6px;">
+      <div id="hr-tools" style="position: relative; top: -13px;">
         <hr>
         <h3 style="position: relative; margin-left: 258px; top: -5px;">Tools</h3>
     </div>
