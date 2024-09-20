@@ -157,6 +157,8 @@ h4 {
     -webkit-text-fill-color: transparent;
     animation: animate 2s linear infinite;
     color: transparent;
+    top: 170px;
+    left: -198px;
 }
 
     b {
@@ -200,6 +202,17 @@ h4 {
     position: relative;
     top: 10px;
    }
+
+   li {
+    font-size: 15px;
+   }
+   #header_div {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-bottom: 118px;
+}
   </style>
   <script>
     var base_url = "${base_url}";
@@ -229,7 +242,7 @@ h4 {
   </script>
   <title>Answers for: ${media.title}</title>
 </head>
-<div id="header_div">
+<div id="header_div" >
     <div>
       <img src="${thumbnail}" height="108px">
     </div>
@@ -239,34 +252,12 @@ h4 {
       <p style="font-size: 12px">Uploaded by ${media.user.name} on ${date.toDateString()}</p>
       <p style="font-size: 12px">Assigned on ${assigned_date.toDateString()}, ${deadline_text}</p>
       </div>
-      <div id="hr-tools" style="position: relative; top: -13px;">
-        <hr>
-        <h3 style="position: relative; margin-left: 258px; top: -5px;">Tools</h3>
-    </div>
+      <h3 style="position: relative;margin-left: -198px;top: 106px;">Tools:</h3>
+      </div>
       <div class="tools">
-        <div class="tools-control" style="position: absolute; top: -40px;">
+        <div class="tools-control" style="position: absolute; top: -47px;">
       <input id="skipper" type="button" value="Skip Video" onclick="skip_video();" disabled/>
-      <input id="answers_button" style="position: relative; left: 75px;" type="button" value="Auto Answer Questions" onclick="answer_questions();" disabled/>
-      <div id="speed_container" hidden>
-        <label style="font-size: 12px" for="speed_dropdown">Video speed:</label>
-        <select name="speed_dropdown" id="speed_dropdown" onchange="video_speed()">
-          <option value="0.25">0.25</option>
-          <option value="0.5">0.5</option>
-          <option value="0.75">0.75</option>
-          <option value="1" selected>Normal</option>
-          <option value="1.25">1.25</option>
-          <option value="1.5">1.5</option>
-          <option value="1.75">1.75</option>
-          <option value="2">2</option>
-          <option value="-1">Custom</option>
-        </select>
-        <label id="custom_speed_label" style="font-size: 12px" for="custom_speed"></label>
-        <input type="range" id="custom_speed" name="custom_speed" value="1" min="0.1" max="16" step="0.1" oninput="video_speed()" hidden>
-      </div>
-      <div id="options_container">
-        <label for="pause_on_focus" style="font-size: 14px;position: relative; color: white; left: 374px; top: -20px;">Don't pause on unfocus: </label>
-        <input type="checkbox" id="pause_on_focus" name="pause_on_focus" onchange="toggle_unfocus();" style="position: relative;left: 374px;top: -17px;">
-      </div>
+      <input id="answers_button" style="position: relative; left: 25px;" type="button" value="Auto Answer Questions" onclick="answer_questions();" disabled/>
         </div>
              <div id="correct-answers">
             <h4>Correct Answers Hacked By HAHiOS:</h4>
@@ -274,13 +265,14 @@ h4 {
     </div>
     </div>
   </div>
+  <hr style="position: relative;top: -121px;">
   <hr>
   <div id="content"> 
-    <p style="font-size: 12px" id="loading_text"></p>
+    <p style="font-size: 15px" id="loading_text"></p>
   </div>
   <hr>
   <p style="font-size: 14px">Made By HAHiOS</p>
-  <p style="font-size: 14px">I am a student of RHHS. My dream is to be a Hacker, sometime I am a Black Hat Hacker, and sometime I am a White Hat Hacker.</p>`;
+  <p style="font-size: 14px">I am a student of RHHS. My dream is to be a Hacker, sometimes I am a Black Hat Hacker, and sometimes I am a White Hat Hacker.</p>`;
   popup = window.open("about:blank", "", "width=600, height=400");
   popup.document.write(base_html);
 
@@ -391,7 +383,7 @@ function parseQuestions(questions) {
           <td class="timestamp_div no_vertical_margin">
             <p>[${timestamp}]</p>
           </td>
-          <td class="question" style="font-size: 14px;">
+          <td class="question" style="font-size: 15px;">
             ${question_content}
           </td>
         </tr>
