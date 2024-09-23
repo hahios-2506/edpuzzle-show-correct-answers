@@ -200,7 +200,8 @@ h4 {
 
    .tools {
     position: relative;
-    top: 10px;
+    top: 174px;
+    left: 10px;
    }
 
    li {
@@ -252,16 +253,15 @@ h4 {
       <p style="font-size: 12px">Uploaded by ${media.user.name} on ${date.toDateString()}</p>
       <p style="font-size: 12px">Assigned on ${assigned_date.toDateString()}, ${deadline_text}</p>
       </div>
+      <div>
       <h3 style="position: relative;margin-left: -198px;top: 106px;">Tools:</h3>
+      <h4 style="position: absolute;margin-left: 650px;top: 198px;">Correct Answers Hacked By HAHiOS:</h4>
       </div>
+    </div>
       <div class="tools">
-        <div class="tools-control" style="position: absolute; top: -47px;">
+        <div class="tools-control">
       <input id="skipper" type="button" value="Skip Video" onclick="skip_video();" disabled/>
       <input id="answers_button" style="position: relative; left: 25px;" type="button" value="Auto Answer Questions" onclick="answer_questions();" disabled/>
-        </div>
-             <div id="correct-answers">
-            <h4>Correct Answers Hacked By HAHiOS:</h4>
-        </div>
     </div>
     </div>
   </div>
