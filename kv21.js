@@ -157,8 +157,6 @@ h4 {
     -webkit-text-fill-color: transparent;
     animation: animate 2s linear infinite;
     color: transparent;
-    top: 170px;
-    left: -198px;
 }
 
     b {
@@ -199,7 +197,7 @@ h4 {
    }
 
    .tools {
-    position: relative;
+    position: absolute;
     top: 174px;
     left: 10px;
    }
@@ -255,13 +253,13 @@ h4 {
       </div>
       <div>
       <h3 style="position: relative;margin-left: -198px;top: 106px;">Tools:</h3>
-      <h4 style="position: absolute;margin-left: 650px;top: 198px;">Correct Answers Hacked By HAHiOS:</h4>
+      <h4 style="position: absolute;margin-left: -198px;top: 198px;">Correct Answers Hacked By HAHiOS:</h4>
       </div>
     </div>
       <div class="tools">
         <div class="tools-control">
       <input id="skipper" type="button" value="Skip Video" onclick="skip_video();" disabled/>
-      <input id="answers_button" style="position: relative; left: 25px;" type="button" value="Auto Answer Questions" onclick="answer_questions();" disabled/>
+      <input id="answers_button" style="position: relative; left: 30px; top: 1px; " type="button" value="Auto Answer Questions" onclick="answer_questions();" disabled/>
     </div>
     </div>
   </div>
