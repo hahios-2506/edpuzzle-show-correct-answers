@@ -202,9 +202,14 @@ h4 {
     left: 10px;
    }
 
-   li {
-    font-size: 15px;
+   li.choice {
+    font-size: 14px;
    }
+
+      li.choice.choice-correct {
+    font-size: 14px;
+   }
+   
    #header_div {
     width: 100%;
     display: flex;
