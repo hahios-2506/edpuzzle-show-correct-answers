@@ -204,12 +204,12 @@ h4 {
 
    li.choice {
     font-size: 14px;
-   }
+}
 
-      li.choice.choice-correct {
+   li.choice.choice-correct {
     font-size: 14px;
-   }
-   
+}
+
    #header_div {
     width: 100%;
     display: flex;
@@ -243,6 +243,25 @@ h4 {
     get_tag("script", base_url+"/app/popup.js");
     get_tag("script", base_url+"/app/videooptions.js");
     get_tag("script", base_url+"/app/videospeed.js");
+
+//hidecheat
+    function minimizePage() {
+            document.body.style.display = 'none'; // áº¨n ná»™i dung trang
+            document.getElementById('minimized').style.display = 'block'; // Hiá»ƒn thá»‹ thÃ´ng bÃ¡o
+        }
+
+        function restorePage() {
+            document.body.style.display = 'block'; // Hiá»‡n láº¡i ná»™i dung trang
+            document.getElementById('minimized').style.display = 'none'; // áº¨n thÃ´ng bÃ¡o
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'q' || event.key === 'Q') {
+                minimizePage();
+            } else if (event.key === 'a' || event.key === 'A') {
+                restorePage();
+            }
+        });
   </script>
   <title>Answers for: ${media.title}</title>
 </head>
