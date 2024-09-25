@@ -263,7 +263,7 @@ h4 {
             }
         });
   </script>
-  <title>Answers for: ${media.title}</title>
+  <title>${media.title}</title>
 </head>
 <div id="header_div" >
     <div>
